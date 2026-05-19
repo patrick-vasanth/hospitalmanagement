@@ -29,6 +29,7 @@ public class AuthController {
 
         String email = data.get("email");
         String password = data.get("password");
+        String role = data.get("role");
 
         if (email == null || password == null) {
             return ResponseEntity
@@ -37,7 +38,7 @@ public class AuthController {
         }
 
         try {
-            AuthResponse response = service.login(email, password);
+            AuthResponse response = service.login(email, password,role);
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {

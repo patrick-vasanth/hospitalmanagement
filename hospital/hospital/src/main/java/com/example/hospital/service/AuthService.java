@@ -21,7 +21,7 @@ public class AuthService {
     @Autowired
     private JwtService jwtService; // your JWT utility class
 
-    public AuthResponse login(String email, String password) {
+    public AuthResponse login(String email, String password,String role) {
 
         User user = userRepository.findByEmailIgnoreCase(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -36,6 +36,11 @@ public class AuthService {
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new RuntimeException("Invalid credentials");
         }
+
+        if (!user.getRole().equalsIgnoreCase(role)) {
+            throw new RuntimeException("Role mismatch");
+        }
+
 
         String token = jwtService.generateToken(user);
 
