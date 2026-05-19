@@ -56,9 +56,18 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
 
+        // Check email already exists
+        if (userRepository.findByEmailIgnoreCase(user.getEmail()).isPresent()) {
+            return ResponseEntity.badRequest().body("Email already exists");
+        }
+
+        // Encrypt password
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        return ResponseEntity.ok(userRepository.save(user));
+        // Save user
+        User savedUser = userRepository.save(user);
+
+        return ResponseEntity.ok(savedUser);
     }
 
     @GetMapping("/me")

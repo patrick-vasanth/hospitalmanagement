@@ -39,11 +39,14 @@ public class AuthService {
 
         String token = jwtService.generateToken(user);
 
-        UserResponse userResponse = new UserResponse(
+             UserResponse userResponse = new UserResponse(
+                user.getId(),
                 user.getEmail(),
                 user.getRole(),
                 user.getName()
         );
+        System.out.println("LOGIN USER ID = " + user.getId());
+        System.out.println("RESPONSE ID = " + userResponse.getId());
 
         // ✅ RETURN THIS
         return new AuthResponse(token, userResponse);    }

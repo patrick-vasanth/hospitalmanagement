@@ -2,14 +2,23 @@ package com.example.hospital.response;
 
 public class UserResponse {
 
+    private Long id;
+
     private String email;
-    private String role; // optional (DOCTOR / PATIENT
+
+    private String role;
+
     private String name;
 
-    public UserResponse(String email, String role,String name) {
+    public UserResponse(Long id, String email, String role, String name) {
+        this.id = id;
         this.email = email;
         this.role = role;
-        this.name=name;
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getEmail() {
