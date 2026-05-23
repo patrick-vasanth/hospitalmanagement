@@ -2,6 +2,7 @@ package com.example.hospital.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "appointments")
@@ -19,8 +20,11 @@ public class Appointment {
 
     private Long patientId;
 
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startTime;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endTime;
 
     // ========================================
@@ -71,7 +75,7 @@ public class Appointment {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime start) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
@@ -79,7 +83,7 @@ public class Appointment {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime end) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 }

@@ -32,6 +32,8 @@ public class AppointmentController {
     public Appointment createAppointment(
             @RequestBody Appointment appointment
     ) {
+        System.out.println(appointment.getStartTime());
+        System.out.println(appointment.getEndTime());
         return appointmentRepository.save(appointment);
     }
 
@@ -51,6 +53,10 @@ public class AppointmentController {
 
         appointment.setPatientName(updatedAppointment.getPatientName());
         appointment.setDoctorName(updatedAppointment.getDoctorName());
+
+        appointment.setDoctorId(updatedAppointment.getDoctorId());
+        appointment.setPatientId(updatedAppointment.getPatientId());
+
         appointment.setStartTime(updatedAppointment.getStartTime());
         appointment.setEndTime(updatedAppointment.getEndTime());
 
