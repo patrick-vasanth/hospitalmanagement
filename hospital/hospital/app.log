@@ -27,3 +27,15 @@
 2026-05-23T10:50:30.461+05:30  WARN 13540 --- [hospital] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-05-23T10:50:31.669+05:30  INFO 13540 --- [hospital] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
 2026-05-23T10:50:31.685+05:30  INFO 13540 --- [hospital] [main] c.example.hospital.HospitalApplication   : Started HospitalApplication in 6.329 seconds (process running for 6.761)
+2026-05-23T11:23:38.174+05:30  WARN 13540 --- [hospital] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m39s190ms322µs900ns).
+2026-05-23T11:38:37.363+05:30  WARN 13540 --- [hospital] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m59s138ms23µs300ns).
+2026-05-23T12:15:27.671+05:30  WARN 13540 --- [hospital] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m20s256ms384µs100ns).
+2026-05-23T12:15:48.032+05:30  INFO 13540 --- [hospital] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-23T12:15:48.032+05:30  INFO 13540 --- [hospital] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-23T12:15:48.032+05:30  INFO 13540 --- [hospital] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-23T13:40:07.168+05:30  WARN 13540 --- [hospital] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m8s655ms436µs600ns).
+2026-05-23T13:50:52.055+05:30  INFO 13540 --- [hospital] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-23T13:50:52.085+05:30  INFO 13540 --- [hospital] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-23T13:50:52.089+05:30  INFO 13540 --- [hospital] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-23T13:50:52.092+05:30  INFO 13540 --- [hospital] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-23T13:50:52.095+05:30  INFO 13540 --- [hospital] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
